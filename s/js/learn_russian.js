@@ -549,10 +549,10 @@ var AudioPlayerHTML5=(function AudioPlayerHTML5_constructor(){
 	//*** User commands ***
 	function play(url){
 		var source = url;
-		if (player.canPlayType('audio/mpeg;')) {
+		if (player.canPlayType('audio/webm;codes=opus')) {
 			source= url;
 		} else {
-			source= url.replace('.mp3','.ogg');
+			source= url.replace('.webm','.mp3');
 		}
 		player && url && (player.src=source);
 		player && player.play();
