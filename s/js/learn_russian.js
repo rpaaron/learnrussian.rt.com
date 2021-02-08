@@ -387,6 +387,9 @@ var AudioPlayerHTML5=(function AudioPlayerHTML5_constructor(){
 	//*** User commands ***
 	function play(url){
 		var source = url;
+		if (player.canPlayType('audio/webm;codecs="opus"')) {
+			source= url.replace('.mp3', '.webm');
+		} else
 		if (player.canPlayType('audio/mpeg;')) {
 			source= url;
 		} else {
