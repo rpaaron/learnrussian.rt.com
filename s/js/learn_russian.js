@@ -387,13 +387,11 @@ var AudioPlayerHTML5=(function AudioPlayerHTML5_constructor(){
 	//*** User commands ***
 	function play(url){
 		var source = url;
-		if (!player.canPlayType('audio/webm;codecs="opus"')) {
             if (player.canPlayType('audio/mpeg;')) {
                 source= url.replace('.webm', '.mp3');
             } else {
                 source= url;
             }
-		}
 		
 		
 		if (player && url && (!player.src.endsWith(source))) {
