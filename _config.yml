@@ -5,6 +5,6 @@ defaults:
     values:
       layout: "default"
 
-mediaurl: "https://media.githubusercontent.com/media/krisl/learnrussian.rt.com/master"
-cssurl: "https://media.githubusercontent.com/media/krisl/learnrussian.rt.com/master/s/css/"
+mediaurl: "https://media.githubusercontent.com/media/learnrussian/learnrussian.github.io/master"
+cssurl:   "https://media.githubusercontent.com/media/learnrussian/learnrussian.github.io/master/s/css/"
 #baseurl: "/learnrussian.rt.com"
