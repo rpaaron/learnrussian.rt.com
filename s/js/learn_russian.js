@@ -840,11 +840,6 @@ $(function(){
 			$(this).addClass("uppercase");
 	});
 	
-	if(BrowserDetect.browser.toLowerCase() == 'explorer' && !$.cookie('ie_warning') &&
-		(BrowserDetect.version == 7 || BrowserDetect.version == 8))
-	
-		ie_warn_init();
-	
 });
 
 function gtab_select(tab_id) {
@@ -864,21 +859,3 @@ function disclaimer_change(a) {
 	$('.disclaimer .menu_item.' + a).addClass('active');
 	$('.disclaimer').removeClass().addClass('disclaimer').addClass(a);
 }
-
-function ie_warn_init(){
-    var elem = $('.web_brouser_ie78');
-	$('.close', elem).click(toggle_form);
-	toggle_form();
-	$.cookie('ie_warning', 1);
-	function toggle_form(e){
-		elem.toggle();
-		var parent = $(window)
-		elem.css({
-			"margin": '0px',
-			"top": (((parent.height() - elem.outerHeight()) / 2) + parent.scrollTop() + "px"),
-			"left": (((parent.width() - elem.outerWidth()) / 2) + parent.scrollLeft() + "px")
-		});
-		if(e) e.preventDefault();
-	}
-	
-};
