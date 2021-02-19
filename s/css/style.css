@@ -367,9 +367,6 @@ a.underline:hover, a:hover span.underline{
 			.main ul.bul li.bul_2{
 				background: url({{ site.cssurl }}main/2_bul.png) no-repeat scroll 0 10px transparent;
 				}
-			.main ul.bul li.bul_3{
-				background: url({{ site.cssurl }}main/3_bul.png) no-repeat scroll 0 10px transparent;
-				}
 			.main .left .r-star-shape{
 				width:400px;
 				margin:25px 0;
