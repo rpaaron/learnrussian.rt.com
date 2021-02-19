@@ -437,12 +437,6 @@ a.underline:hover, a:hover span.underline{
 .table_list th {border-bottom:rgb(221, 223, 222) 1px solid; font-weight: bold;  font-size: 18px;}
 .table_list th:first-child {width: 65px;}
 
-.restore h1 {font-size: 42px; font-weight: normal; font-weight: normal; text-align: left; margin: 0 0 0 0; font-family: Times New Roman;}
-.restore .bgemail {background: url("{{ site.cssurl }}restore/email.png") no-repeat scroll 0 0 transparent; height: 30px; margin: 25px 0 10px 0px; width: 387px;}
-.restore .bgemail input {background: none repeat scroll 0 0 transparent; border: medium none; margin: 6px 0 0 58px; width: 315px;}
-.restore .button {background: url("{{ site.cssurl }}restore.png") no-repeat scroll 0 0 transparent; width: 87; height: 36; margin: 25px 0 0 52px;}
-.restore .button a {display: block; height: 34px; width: 85px; margin: 1px;}
-
 .profile h1 {font-size: 42px; font-weight: normal; font-weight: normal; text-align: left; margin: 0 0 0 0; font-family: Times New Roman;}
 .profile .change .old {background: url("{{ site.cssurl }}profile/old.png") no-repeat scroll 0 0 transparent; height: 32px; margin: 25px 0 10px 0px; width: 434px;}
 .profile .change .new {background: url("{{ site.cssurl }}profile/new.png") no-repeat scroll 0 0 transparent; height: 32px; margin: 25px 0 10px 0px; width: 434px;}
