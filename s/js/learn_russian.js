@@ -840,7 +840,6 @@ $(function(){
 			$(this).addClass("uppercase");
 	});
 	
-	feedback_init();
 	if(BrowserDetect.browser.toLowerCase() == 'explorer' && !$.cookie('ie_warning') &&
 		(BrowserDetect.version == 7 || BrowserDetect.version == 8))
 	
@@ -866,55 +865,6 @@ function disclaimer_change(a) {
 	$('.disclaimer').removeClass().addClass('disclaimer').addClass(a);
 }
 
-/************************************************************************************
-********************************   Feedback   ***********************************
-************************************************************************************/
-function feedback_init(){
-    var elem = $('.feedback');
-	var form = $('form', elem).get(0);
-	
-	$('.if_exists', elem).blur(function(){
-		var form = $('form', elem).get(0);
-		if(form.email.value && form.person.value && form.message_text.value)
-			$('.button input', elem).addClass('active');
-	});
-	
-	$('.close', elem).click(toggle_form);
-	$('.feedback_link').removeClass('underline').addClass('dashed').click(toggle_form);
-	
-	function toggle_form(e){
-		form.reset();
-		elem.removeClass('after');
-		elem.toggle();
-		var parent = $(window)
-		elem.css({
-			"margin": '0px',
-			"top": (((parent.height() - elem.outerHeight()) / 2) + parent.scrollTop() + "px"),
-			"left": (((parent.width() - elem.outerWidth()) / 2) + parent.scrollLeft() + "px")
-		});
-		e.preventDefault();
-	}
-	
-	function on_success(data){
-		form.reset();
-		elem.addClass('after');
-	}
-	
-	$(form).submit(function(){
-		var url = $(this).attr('action');
-		if(!(url && form.email.value && form.person.value && form.message_text.value)) return false;
-		var data = $(this).serialize();
-		$.ajax({
-            url: url,
-            type: 'POST',
-            data: data,
-            dataType: 'json',
-            success: on_success
-        });
-		return false;
-	});
-    
-};
 function ie_warn_init(){
     var elem = $('.web_brouser_ie78');
 	$('.close', elem).click(toggle_form);
