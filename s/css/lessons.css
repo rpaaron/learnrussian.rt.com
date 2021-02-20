@@ -796,18 +796,6 @@ div.crossword{
 	font-weight:bold;
 	margin:20px 0;
 	}
-/*.browser_Safari .crossword div{
-		margin:-1px 0;
-		}
-.browser_Safari .task.typthirteen .wfirst, .task.typthirteen .wthird, .task.typthirteen .wfive{
-	margin:-1px 0 -1px 23px
-		}
-.browser_Safari .task.typthirteen .wsecond, .task.typthirteen .wseven, .task.typthirteen .weigh{
-	margin:-1px 0 -1px 69px;
-		}
-.browser_Safari .task.typthirteen .wfour{
-	margin:-1px 0 -1px 92px;
-		}*/
 	
 /* end crossword */
 
