@@ -24,7 +24,7 @@
 .doc_icon {
     display:none;
     font-size:16px;
-    background: url("{{site.cssurl}}vocabulary/doc_icon.png") no-repeat;
+    background: url("{{site.cssurl}}vocabulary/doc_icon.webp") no-repeat;
     padding:8px 0 10px 35px;
     color:#999;
 }

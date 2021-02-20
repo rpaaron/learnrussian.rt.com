@@ -43,7 +43,7 @@ tabcontrol ul.number li{
 	cursor: pointer;
 	}
 tabcontrol ul.number li.select{
-	background: url({{site.cssurl}}lessons/numerikselect.png) no-repeat scroll 0 0 transparent;
+	background: url({{site.cssurl}}lessons/numerikselect.webp) no-repeat scroll 0 0 transparent;
 	color:#db0a0a;	
 	}
 tabcontrol.tab-1-active content .tab-2,

@@ -143,7 +143,7 @@ a.underline:hover, a:hover span.underline{
 			.logo{
 				margin:10px;
 				float:left;
-				background:url({{ site.cssurl }}images/logo.png) no-repeat 0 0 transparent;
+				background:url({{ site.cssurl }}images/logo.webp) no-repeat 0 0 transparent;
 				width:155px;
 				height:68px;
 				}
@@ -164,7 +164,7 @@ a.underline:hover, a:hover span.underline{
 				   cursor:pointer;
 				   }*/
 					.menu div.hmenu ul li{
-						background:url({{ site.cssurl }}images/menuicon1.png) no-repeat 4px 6px transparent;
+						background:url({{ site.cssurl }}images/menuicon1.webp) no-repeat 4px 6px transparent;
 						/*border:1px solid red;*/
 						width:70px;
 						float:left;
@@ -282,10 +282,10 @@ a.underline:hover, a:hover span.underline{
 				position: absolute;
 				top: -18px;
 				width: 19px;
-				background:url({{ site.cssurl }}images/r-star.png);
+				background:url({{ site.cssurl }}images/r-star.webp);
 				}
 			.r-star-shape .cn.rr{
-				background:url({{ site.cssurl }}images/rr-star.png);
+				background:url({{ site.cssurl }}images/rr-star.webp);
 				}
 			.r-star-shape .cn.tr, .r-star-shape .cn.br {
 				margin-left:100%;
@@ -297,10 +297,10 @@ a.underline:hover, a:hover span.underline{
 				width:100%;
 				} 				
 			.r-star-shape .conten{				
-				background:url({{ site.cssurl }}images/centerconten.png) repeat-y;
+				background:url({{ site.cssurl }}images/centerconten.webp) repeat-y;
 				}
 			.r-star-shape .conten.rr {
-				background: url({{ site.cssurl }}images/rcenterconten.png) repeat-y scroll 1px 0 transparent;
+				background: url({{ site.cssurl }}images/rcenterconten.webp) repeat-y scroll 1px 0 transparent;
 				}
 			.r-star-shape .conten.cr{
 			    background-position: 100% 0;
@@ -348,7 +348,7 @@ a.underline:hover, a:hover span.underline{
 				line-height:18px;
 				}
 			.main ul li{
-			    background:url({{ site.cssurl }}images/mainli.png) no-repeat 0 10px transparent;
+			    background:url({{ site.cssurl }}images/mainli.webp) no-repeat 0 10px transparent;
 				list-style:none;
 				padding:5px 0 1px 15px;
 				margin:5px 0 0;
@@ -362,10 +362,10 @@ a.underline:hover, a:hover span.underline{
 				padding: 12px 0 1px 35px;
 				}
 			.main ul.bul li.bul_1{
-				background: url({{ site.cssurl }}main/1_bul.png) no-repeat scroll 0 10px transparent;
+				background: url({{ site.cssurl }}main/1_bul.webp) no-repeat scroll 0 10px transparent;
 				}
 			.main ul.bul li.bul_2{
-				background: url({{ site.cssurl }}main/2_bul.png) no-repeat scroll 0 10px transparent;
+				background: url({{ site.cssurl }}main/2_bul.webp) no-repeat scroll 0 10px transparent;
 				}
 			.main .left .r-star-shape{
 				width:400px;
@@ -373,7 +373,7 @@ a.underline:hover, a:hover span.underline{
 				}
 					
 .checkbox{
-	background:url({{site.cssurl}}main/selectcheket.png) no-repeat 0 0 transparent;
+	background:url({{site.cssurl}}main/selectcheket.webp) no-repeat 0 0 transparent;
 	height: 17px;
     margin: -2px 0 0;
     position: absolute;
@@ -438,10 +438,10 @@ a.underline:hover, a:hover span.underline{
 .table_list th:first-child {width: 65px;}
 
 .profile h1 {font-size: 42px; font-weight: normal; font-weight: normal; text-align: left; margin: 0 0 0 0; font-family: Times New Roman;}
-.profile .change .old {background: url("{{ site.cssurl }}profile/old.png") no-repeat scroll 0 0 transparent; height: 32px; margin: 25px 0 10px 0px; width: 434px;}
-.profile .change .new {background: url("{{ site.cssurl }}profile/new.png") no-repeat scroll 0 0 transparent; height: 32px; margin: 25px 0 10px 0px; width: 434px;}
+.profile .change .old {background: url("{{ site.cssurl }}profile/old.webp") no-repeat scroll 0 0 transparent; height: 32px; margin: 25px 0 10px 0px; width: 434px;}
+.profile .change .new {background: url("{{ site.cssurl }}profile/new.webp") no-repeat scroll 0 0 transparent; height: 32px; margin: 25px 0 10px 0px; width: 434px;}
 .profile .change .old input, .profile .change .new input {background: none repeat scroll 0 0 transparent; border: medium none; margin: 6px 0 0 58px; width: 370px;}
-.profile .change .button {background: url("{{ site.cssurl }}profile/change.png") no-repeat scroll 0 0 transparent; width: 89; height: 36; margin: 25px 0 0 52px;}
+.profile .change .button {background: url("{{ site.cssurl }}profile/change.webp") no-repeat scroll 0 0 transparent; width: 89; height: 36; margin: 25px 0 0 52px;}
 .profile .change .button a {display: block; height: 34px; width: 87px; margin: 1px;}
 
 .profile_ch .change, .profile_ch .ach_not_active, .profile_ch .ch_active, .profile_ch .s_not_active {display: block;}
@@ -454,7 +454,7 @@ a.underline:hover, a:hover span.underline{
 .profile_ach .share_top div{overflow: visible;}
 .profile {overflow: visible;}
 .profile .profile_menu {margin-top: 10px;}
-.profile .profile_menu .star {background: url("{{ site.cssurl }}profile/star.png") no-repeat scroll 0 0 transparent; width: 42px; height: 40px; float: left; margin-right: 5px;}
+.profile .profile_menu .star {background: url("{{ site.cssurl }}profile/star.webp") no-repeat scroll 0 0 transparent; width: 42px; height: 40px; float: left; margin-right: 5px;}
 .profile .profile_menu .menu_item {float: left; margin: 10px; width: 150px;}
 .profile .profile_menu .menu_item .not_active {float: left;}
 .profile .profile_menu .not_active {border-bottom: rgb(0, 51, 102) 1px dashed;}
@@ -464,8 +464,8 @@ a.underline:hover, a:hover span.underline{
 .profile .profile_menu .ch_active .t {font-size: 15px; font-family: Arial; font-weight: bold; color: white; background-color: rgb(0, 128, 203); height: 20px;}
 .profile .profile_menu .s_not_active a {text-decoration: none; font-size: 15px; font-family: Arial; color: rgb(0, 51, 102);}
 .profile .profile_menu .s_active .t {font-size: 15px; font-family: Arial; font-weight: bold; color: white; background-color: rgb(0, 128, 203); height: 20px;}
-.profile .profile_menu .active .pl {background: url("{{ site.cssurl }}profile/pl.png") no-repeat scroll 0 0 transparent; width: 5px; height: 20px; float: left;}
-.profile .profile_menu .active .pr {background: url("{{ site.cssurl }}profile/pr.png") no-repeat scroll 0 0 transparent; width: 5px; height: 20px; float: right;}
+.profile .profile_menu .active .pl {background: url("{{ site.cssurl }}profile/pl.webp") no-repeat scroll 0 0 transparent; width: 5px; height: 20px; float: left;}
+.profile .profile_menu .active .pr {background: url("{{ site.cssurl }}profile/pr.webp") no-repeat scroll 0 0 transparent; width: 5px; height: 20px; float: right;}
 .profile .profile_menu .ch_active {width: 140px;}
 .profile .profile_menu .ch_active .t {width: 130px;}
 .profile .profile_menu .ach_active {width: 150px;}
@@ -477,7 +477,7 @@ a.underline:hover, a:hover span.underline{
 .test_achiv .share {width: 265px; height: 65px; margin-top: -25px; /*display: none;*/overflow: visible;}
 .test_achiv .share_visible {display: block;}
 .test_achiv .share_top {width: 243px; height: 25px; /*border: rgb(213, 213, 213) 1px solid;*/ padding: 30px 10px 5px 10px;overflow: visible;}
-.test_achiv .share_bottom {width: 263px; height: 4px; border: 0; background: url("{{ site.cssurl }}profile/shadow.png") no-repeat scroll 0 0 transparent;}
+.test_achiv .share_bottom {width: 263px; height: 4px; border: 0; background: url("{{ site.cssurl }}profile/shadow.webp") no-repeat scroll 0 0 transparent;}
 
 .subscribe_checkbox {margin-top: 50px; margin-left: 10px; cursor:pointer;}
 
@@ -488,8 +488,8 @@ a.underline:hover, a:hover span.underline{
 .disclaimer .disclaimer_menu .menu_item .pr {width: 5px; height: 20px; float: left;}
 .disclaimer .disclaimer_menu .menu_item .t {height: 20px; float: left;}
 .disclaimer .disclaimer_menu .menu_item .t .tt {font-size: 15px; font-family: Times New Roman; letter-spacing: 2px; color: rgb(0, 51, 102); border-bottom: rgb(0, 51, 102) 1px dashed; cursor: pointer; float: left;}
-.disclaimer .disclaimer_menu .menu_item.active .pl {background: url("{{ site.cssurl }}profile/pl.png") no-repeat scroll 0 0 transparent;}
-.disclaimer .disclaimer_menu .menu_item.active .pr {background: url("{{ site.cssurl }}profile/pr.png") no-repeat scroll 0 0 transparent;}
+.disclaimer .disclaimer_menu .menu_item.active .pl {background: url("{{ site.cssurl }}profile/pl.webp") no-repeat scroll 0 0 transparent;}
+.disclaimer .disclaimer_menu .menu_item.active .pr {background: url("{{ site.cssurl }}profile/pr.webp") no-repeat scroll 0 0 transparent;}
 .disclaimer .disclaimer_menu .menu_item.active .t {background-color: rgb(0, 128, 203);}
 .disclaimer .disclaimer_menu .menu_item.active .t .tt {color: white; border-bottom: 0; cursor: auto;}
 .disclaimer .rus, .disclaimer .eng {display:none;}
