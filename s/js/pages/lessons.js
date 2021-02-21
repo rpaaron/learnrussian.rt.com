@@ -290,16 +290,17 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 	var lesson_checker = (function(){
 		
 		function draw_lesson_info(){
+            var states = {};
             $('.task:not(.nocheck)').each(function(n, task){
                 var task = $(task);
-                var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
-                if(task.hasClass('correct'))
-                    localStorage.setItem("lr_exercise_" + tid, "correct");
-                else if(task.hasClass('wrong'))
-                    localStorage.setItem("lr_exercise_" + tid, "wrong");
-                else
-                    localStorage.removeItem("lr_exercise_" + tid);
+                var tid = parseInt(task.attr('id').split('-')[1]);
+                states[tid]
+                    = task.hasClass('correct') ? true
+                    : task.hasClass('wrong')   ? false
+                    : null;
             });
+            var lid = parseInt($('.homework').attr('id').split('-')[1] || 0);
+            localStorage.setItem("lr_lesson_" + lid, JSON.stringify(states));
 
 			var com = draw_complete_percentage();
 
@@ -317,12 +318,21 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		}
 		
 		function init(){
-            $('.task').each(function(n, task){
-                var task = $(task);
-                var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
+            var lid = parseInt($('.homework').attr('id').split('-')[1] || 0);
+            var states = (function() {
+                try { return JSON.parse(localStorage.getItem("lr_lesson_" + lid)); }
+                catch { return {}; }
+            })();
 
-                if (localStorage.getItem("lr_exercise_" + tid) == "correct")
-                    task.removeClass('learning').removeClass('wrong').addClass('correct');
+            $('.task:not(.nocheck)').each(function(n, task){
+                var task = $(task);
+                var tid = parseInt(task.attr('id').split('-')[1]);
+
+                task.removeClass('learning').removeClass('wrong').removeClass('correct');
+                if (states[tid] === true)
+                    task.addClass('correct');
+                if (states[tid] === false)
+                    task.addClass('wrong');
             });
 
             // read here
