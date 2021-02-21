@@ -145,16 +145,17 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
     
 	function set_check(task, isRight){
 		task = $(task);
-		var url = 'http://'+location.host+'/answer/';
 		var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
 		// Reset
 		if('undefined' == typeof isRight){
-			if($(task).hasClass('correct')) $.post(url, {id_exercise: tid, status: 0}, function(){}, 'json'); // without last 2 arguments fire exeption in Opera (jQuery try to evaluate response as script)
+            if($(task).hasClass('correct'))
+                localStorage.removeItem("lr_exercise_" + tid);
 			task.addClass('learning').removeClass('wrong').removeClass('correct');
 		}
 		// Right
 		else if(isRight){
-			if(!$(task).hasClass('correct')) $.post(url, {id_exercise: tid, status: 1}, function(){}, 'json');// without last 2 arguments fire exeption in Opera (jQuery try to evaluate response as script)
+            if(!$(task).hasClass('correct'))
+                localStorage.setItem("lr_exercise_" + tid, "correct");
 			task.removeClass('learning').removeClass('wrong').addClass('correct');
 
 
@@ -195,7 +196,8 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		}
 		// Wrong
 		else{
-			if($(task).hasClass('correct')) $.post(url, {id_exercise: tid, status: 0}, function(){}, 'json');// without last 2 arguments fire exeption in Opera (jQuery try to evaluate response as script)
+            if($(task).hasClass('correct')) // bug? "correct" tasks cannot become "wrong"
+                localStorage.setItem("lr_exercise_" + tid, "wrong");
 			task.removeClass('learning').addClass('wrong').removeClass('correct');
 
 			//Подсветка не правильных
@@ -1794,6 +1796,15 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		for(var i=0; i<LessonTypes.length; i++){
 			LessonTypes[i] && LessonTypes[i].init && LessonTypes[i].init();
 		}
+
+        $('.task').each(function(n, task){
+	    	var task = $(task);
+	        var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
+
+            if (localStorage.getItem("lr_exercise_" + tid) == "correct")
+		    	task.removeClass('learning').removeClass('wrong').addClass('correct');
+        });
+
 		lesson_checker.init();
 		//console.profileEnd('lessons_autorun');
 
