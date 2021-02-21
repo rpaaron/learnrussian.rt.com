@@ -148,14 +148,10 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
 		// Reset
 		if('undefined' == typeof isRight){
-            if($(task).hasClass('correct'))
-                localStorage.removeItem("lr_exercise_" + tid);
 			task.addClass('learning').removeClass('wrong').removeClass('correct');
 		}
 		// Right
 		else if(isRight){
-            if(!$(task).hasClass('correct'))
-                localStorage.setItem("lr_exercise_" + tid, "correct");
 			task.removeClass('learning').removeClass('wrong').addClass('correct');
 
 
@@ -196,8 +192,6 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		}
 		// Wrong
 		else{
-            if($(task).hasClass('correct')) // bug? "correct" tasks cannot become "wrong"
-                localStorage.setItem("lr_exercise_" + tid, "wrong");
 			task.removeClass('learning').addClass('wrong').removeClass('correct');
 
 			//Подсветка не правильных
@@ -296,6 +290,17 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 	var lesson_checker = (function(){
 		
 		function draw_lesson_info(){
+            $('.task:not(.nocheck)').each(function(n, task){
+                var task = $(task);
+                var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
+                if(task.hasClass('correct'))
+                    localStorage.setItem("lr_exercise_" + tid, "correct");
+                else if(task.hasClass('wrong'))
+                    localStorage.setItem("lr_exercise_" + tid, "wrong");
+                else
+                    localStorage.removeItem("lr_exercise_" + tid);
+            });
+
 			var com = draw_complete_percentage();
 
 			if(com==100){
@@ -312,6 +317,15 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		}
 		
 		function init(){
+            $('.task').each(function(n, task){
+                var task = $(task);
+                var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
+
+                if (localStorage.getItem("lr_exercise_" + tid) == "correct")
+                    task.removeClass('learning').removeClass('wrong').addClass('correct');
+            });
+
+            // read here
 			draw_complete_percentage();
 			$('.lessoncomplected.popup .close').click(function close(){
 				$('.lessoncomplected.popup:visible').hide();
@@ -1796,14 +1810,6 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		for(var i=0; i<LessonTypes.length; i++){
 			LessonTypes[i] && LessonTypes[i].init && LessonTypes[i].init();
 		}
-
-        $('.task').each(function(n, task){
-	    	var task = $(task);
-	        var tid = parseInt($('.homework').attr('id').split('-')[1] || 0) * 100 + parseInt(task.attr('id').split('-')[1]);
-
-            if (localStorage.getItem("lr_exercise_" + tid) == "correct")
-		    	task.removeClass('learning').removeClass('wrong').addClass('correct');
-        });
 
 		lesson_checker.init();
 		//console.profileEnd('lessons_autorun');
