@@ -320,8 +320,9 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
 		function init(){
             var lid = parseInt($('.homework').attr('id').split('-')[1] || 0);
             var states = (function() {
-                try { return JSON.parse(localStorage.getItem("lr_lesson_" + lid)); }
-                catch { return {}; }
+                try { return JSON.parse(localStorage.getItem("lr_lesson_" + lid)) || {}; }
+                catch { }
+                return ({}); 
             })();
 
             $('.task:not(.nocheck)').each(function(n, task){
