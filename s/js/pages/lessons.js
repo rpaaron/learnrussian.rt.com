@@ -329,7 +329,8 @@ var LessonsCustomControl = (function LessonsCustomControl_constructor(){
                 var task = $(task);
                 var tid = parseInt(task.attr('id').split('-')[1]);
 
-                task.removeClass('learning').removeClass('wrong').removeClass('correct');
+                if (states[tid] != null) // undefined or null
+                    task.removeClass('learning').removeClass('wrong').removeClass('correct');
                 if (states[tid] === true)
                     task.addClass('correct');
                 if (states[tid] === false)
